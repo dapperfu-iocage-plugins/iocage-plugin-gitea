@@ -1,8 +1,8 @@
-#!/bin/csh
+#!/bin/sh
 
 ## Redis
 # Config
-setenv CFG /usr/local/etc/redis.conf
+CFG=/usr/local/etc/redis.conf
 cp ${CFG}.sample ${CFG}
 : Enable unix socket.
 sed -i .bak -e 's/# unixsocket/unixsocket/g' ${CFG}

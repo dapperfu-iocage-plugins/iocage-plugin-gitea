@@ -1,8 +1,8 @@
-#!/bin/csh
+#!/bin/sh
 
 ## MySQL
 # Config
-setenv CFG /usr/local/etc/mysql/my.cnf
+CFG=/usr/local/etc/mysql/my.cnf
 cp ${CFG}.sample ${CFG}
 sed -i .bak -e 's/^\[mysqld\]$/[mysqld]\\
 skip-networking/' ${CFG}

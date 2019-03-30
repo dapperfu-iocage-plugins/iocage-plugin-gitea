@@ -1,8 +1,8 @@
-#!/bin/csh
+#!/bin/sh
 
 ## SSH
 #Config
-setenv CFG /etc/ssh/sshd_config
+CFG=/etc/ssh/sshd_config
 
 cat <<EOF> ${CFG}
 AllowUsers git

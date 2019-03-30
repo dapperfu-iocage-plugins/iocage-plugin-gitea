@@ -1,18 +1,18 @@
-#!/bin/csh
+#!/bin/sh
 
 cat /dev/urandom | tr -dc 'a-zA-Z0-9_' | fold -w 43 | head -n 1 > /root/LFS_JWT_SECRET
 cat /dev/urandom | tr -dc 'a-zA-Z0-9_' | fold -w 43 | head -n 1 > /root/SECRET_KEY
 
 : Generate some random secret strings.
-setenv LFS_JWT_SECRET `cat /root/LFS_JWT_SECRET`
-setenv SECRET_KEY `cat /root/SECRET_KEY`
+LFS_JWT_SECRET=`cat /root/LFS_JWT_SECRET`
+SECRET_KEY=`cat /root/SECRET_KEY`
 
 # Read MySQL Config
-setenv DB `cat /root/dbname`
-setenv USER `cat /root/dbuser`
-setenv PASS `cat /root/dbpassword`
+DB=`cat /root/dbname`
+USER=`cat /root/dbuser`
+PASS=`cat /root/dbpassword`
 
-setenv CFG /usr/local/etc/gitea/conf/app.ini
+CFG=/usr/local/etc/gitea/conf/app.ini
 cp ${CFG}.sample ${CFG}
 
 : Setup Gitea database
