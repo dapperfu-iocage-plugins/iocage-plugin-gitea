@@ -1,0 +1,66 @@
+{
+	"servicerestart":"/usr/local/bin/gitea_restart.sh",
+	"serviceget": "/usr/local/bin/gitea_getter",
+	"serviceset": "/usr/local/bin/gitea_setter",
+	"options": {
+		"adduser": {
+			"type": "add",
+			"name": "Add User",
+			"description": "Add new quasselcore user",
+			"requiredargs": {
+				"username": {
+					"type": "string",
+					"description": "Quassel Client Username"
+				},
+				"password": {
+					"type": "password",
+					"description": "Quassel Client Password"
+				},
+				"fullname": {
+					"type": "string",
+					"description": "Quassel Client Full Name"
+				}
+			},
+			"optionalargs": {
+				"adminuser": { 
+					"type": "bool",
+					"description": "Can this user administrate quasselcore?"
+				}
+			}
+		},
+		"port": {
+			"type": "int",
+			"name": "Quassel Core Port",
+			"description": "Port for incoming quassel connections",
+			"range": "1024-32000",
+			"default": "4242",
+			"requirerestart": true
+		},
+		"sslmode": {
+			"type": "bool",
+			"name": "SSL Only",
+			"description": "Only accept SSL connections",
+			"default": true,
+			"requirerestart": true
+			
+		},	
+		"ssloption": {
+			"type": "combo",
+			"name": "SSL Options",
+			"description": "SSL Connection Options",
+			"requirerestart": true,
+			"default": "tlsallow",
+			"options": {
+					"tlsrequire": "Require TLS",
+					"tlsallow": "Allow TLS",
+					"tlsdisable": "Disable TLS"
+			}
+		},
+		"deluser": {
+			"type": "delete",
+			"name": "Delete User",
+			"description": "Remove a quasselcore user"
+		}
+
+	}
+}
