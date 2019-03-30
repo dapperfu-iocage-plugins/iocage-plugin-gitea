@@ -1,18 +1,7 @@
 #!/bin/sh
 
-## MySQL
-# Config
-CFG=/usr/local/etc/mysql/my.cnf
-cp ${CFG}.sample ${CFG}
-sed -i .bak -e 's/^\[mysqld\]$/[mysqld]\\
-skip-networking/' ${CFG}
-
-echo "- MySQL Config Diff" >> ${LOG}
-diff ${CFG} ${CFG}.sample >> ${LOG}
-
-
 # Enable the service & disable networking.
-echo "- Enable MySQL" >> ${LOG}
+echo "- Enable MySQL"
 sysrc -f /etc/rc.conf mysql_enable="YES"
 sysrc -f /etc/rc.conf mysql_args="--skip-networking"
 

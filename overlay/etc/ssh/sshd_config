@@ -1,0 +1,4 @@
+AllowUsers git
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+UsePAM no

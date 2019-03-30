@@ -4,16 +4,16 @@
 echo "---- Beginning Gitea Plugin Jail Install ---"
 
 ## Redis
-sh redis.sh
+sh /root/redis.sh
 
 ## MySQL
-sh mysql.sh
+sh /root/mysql.sh
 
 ## SSH
-sh ssh.sh
+sh /root/ssh.sh
 
 ## Gitea
-sh gitea.sh
+sh /root/gitea.sh
 
 ## F5 NGINX(Tm)
-sh nginx.sh
+sh /root/nginx.sh
