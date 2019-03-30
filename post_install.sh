@@ -114,6 +114,12 @@ EOF
 echo "- Gitea Config Diff" >> ${LOG}
 diff ${CFG} ${CFG}.sample >> /root/PLUGIN_INFO
 
+# Enable Gitea
+sysrc gitea_enable=yes
+
+# Start Gitea
+service gitea start
+
 ## F5 NGINX(Tm)
 
 openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/ssl/nginx-selfsigned.key -out 
