@@ -3,64 +3,23 @@
 	"serviceget": "/usr/local/bin/gitea_getter",
 	"serviceset": "/usr/local/bin/gitea_setter",
 	"options": {
-		"adduser": {
-			"type": "add",
-			"name": "Add User",
-			"description": "Add new quasselcore user",
-			"requiredargs": {
-				"username": {
-					"type": "string",
-					"description": "Quassel Client Username"
-				},
-				"password": {
-					"type": "password",
-					"description": "Quassel Client Password"
-				},
-				"fullname": {
-					"type": "string",
-					"description": "Quassel Client Full Name"
-				}
-			},
-			"optionalargs": {
-				"adminuser": { 
-					"type": "bool",
-					"description": "Can this user administrate quasselcore?"
-				}
-			}
+		"dbname": {
+			"type": "string",
+			"name": "Database Name",
+			"description": "Database to use for Gitea setup",
+			"readonly": true
 		},
-		"port": {
-			"type": "int",
-			"name": "Quassel Core Port",
-			"description": "Port for incoming quassel connections",
-			"range": "1024-32000",
-			"default": "4242",
-			"requirerestart": true
+		"dbuser": {
+			"type": "string",
+			"name": "Database Username",
+			"description": "Username to use for Gitea Database setup",
+			"readonly": true
 		},
-		"sslmode": {
-			"type": "bool",
-			"name": "SSL Only",
-			"description": "Only accept SSL connections",
-			"default": true,
-			"requirerestart": true
-			
-		},	
-		"ssloption": {
-			"type": "combo",
-			"name": "SSL Options",
-			"description": "SSL Connection Options",
-			"requirerestart": true,
-			"default": "tlsallow",
-			"options": {
-					"tlsrequire": "Require TLS",
-					"tlsallow": "Allow TLS",
-					"tlsdisable": "Disable TLS"
-			}
-		},
-		"deluser": {
-			"type": "delete",
-			"name": "Delete User",
-			"description": "Remove a quasselcore user"
+		"dbpassword": {
+			"type": "string",
+			"name": "Database Password",
+			"description": "Password to use for Gitea Database setup",
+			"readonly": true
 		}
-
 	}
 }
