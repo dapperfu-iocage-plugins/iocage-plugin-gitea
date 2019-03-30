@@ -17,16 +17,18 @@ echo "$DB" > /root/dbname
 echo "$USER" > /root/dbuser
 export LC_ALL=C
 cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1 > /root/dbpassword
-_PASS=`tail -n1 /root/.mysql_secret`
 PASS=`cat /root/dbpassword`
 
 echo "Database User: $USER"
 echo "Database Password: $PASS"
 
 # Configure mysql
-mysql -u root -p${_PASS} --connect-expired-password <<-EOF
+mysql -u root -p`tail -n1 /root/.mysql_secret` --socket=/tmp/mysql.sock --connect-expired-password <<-EOF
 ALTER USER 'root'@'localhost' IDENTIFIED BY '${PASS}';
 FLUSH PRIVILEGES;
+EOF
+
+mysql -u root -p${PASS} --socket=/tmp/mysql.sock <<-EOF
 DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
 DELETE FROM mysql.user WHERE User='';
 DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
