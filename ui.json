@@ -1,3 +1,3 @@
 {
-	"adminportal": "http://%%IP%%/jenkins/"
+	"adminportal": "http://%%IP%%:32400/web"
 }
