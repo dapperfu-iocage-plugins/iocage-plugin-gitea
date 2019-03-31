@@ -1,25 +1,3 @@
 {
 	"servicerestart":"/usr/local/bin/gitea_restart.sh",
-	"serviceget": "/usr/local/bin/gitea_getter",
-	"serviceset": "/usr/local/bin/gitea_setter",
-	"options": {
-		"dbname": {
-			"type": "string",
-			"name": "Database Name",
-			"description": "Database to use for Gitea setup",
-			"readonly": true
-		},
-		"dbuser": {
-			"type": "string",
-			"name": "Database Username",
-			"description": "Username to use for Gitea Database setup",
-			"readonly": true
-		},
-		"dbpassword": {
-			"type": "string",
-			"name": "Database Password",
-			"description": "Password to use for Gitea Database setup",
-			"readonly": true
-		}
-	}
 }
