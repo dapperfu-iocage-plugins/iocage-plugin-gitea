@@ -18,26 +18,9 @@ curl -o /tmp/gitea.json https://raw.githubusercontent.com/jed-frey/iocage-plugin
 iocage fetch --plugin-file --name /tmp/gitea.json ip4_addr="lagg0|192.168.1.220/24"
 ```
 
-# Licensing.
-
-| Question                                                            | GNU GPL version 3 | Commercial license |
-|---------------------------------------------------------------------|-------------------|--------------------|
-| Are official JedFrey iocage plugins free?                                                      | yes               | no                 |
-| Do I have the right to change the official JedFrey iocage plugins source code?                | yes               | yes                |
-| Can I use official JedFrey iocage plugins in my closed source product?                        | no                | yes                |
-| Do I have to open my source code?                                   | yes               | no                 |
-| Do I have to open source my changes to official JedFrey iocage plugins?                       | yes               | no                 |
-| Do I have to offer the official JedFrey iocage plugins source code to users of my product?    | yes               | no                 |
-| Do I have to document that my product uses official JedFrey iocage plugins?                   | yes               | no                 |
-| Can I receive professional technical support on a commercial basis? | no                | yes                |
-
-Licensing verbiage from [OpenBLT](https://www.feaser.com/en/openblt.php)
-
 # Corrections & Issues
 
-The only real way to test this is re-creating a jail, so after a while it gets tedius. If you find something doesn't work, open an issue:
-
-https://github.com/jed-frey/build_caffe2/issues/new
+The only real way to test this is re-creating a jail, so after a while it gets tedius. If you find something doesn't work, open an issue.
 
 If you know how to correct the issue, create a pull request with the fixes.
 
