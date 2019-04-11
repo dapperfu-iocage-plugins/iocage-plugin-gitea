@@ -2,7 +2,7 @@
   "name": "gitea",
   "plugin_schema": "2",
   "release": "11.2-RELEASE",
-  "artifact": "https://github.com/jed-frey/iocage-plugin-gitea.git",
+  "artifact": "https://github.com/jed-frey-freenas-plugins/iocage-plugin-gitea.git",
   "pkgs": [
     "www/nginx-lite",
     "databases/mysql57-server",
