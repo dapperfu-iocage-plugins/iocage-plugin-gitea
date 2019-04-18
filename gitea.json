@@ -3,7 +3,7 @@
   "plugin_schema": "2",
   "release": "11.2-RELEASE",
   "artifact": "https://github.com/jed-frey-freenas-plugins/iocage-plugin-gitea.git",
-  "properties": { 
+  "properties": {
     "boot": "on",
     "allow_raw_sockets": "1",
     "dhcp": "on",
