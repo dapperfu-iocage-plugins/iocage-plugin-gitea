@@ -1,19 +1,10 @@
 #!/bin/sh
 
-# "Logging"
-echo "---- Beginning Gitea Plugin Jail Install ---"
+for SCRIPT in  `ls ../../tmp/post_install/*.sh`
+do 
+echo "~~~~~~~~~~ ${SCRIPT} ~~~~~~~~~~"
+sh -c "${SCRIPT}"
+echo "###############################"
+echo "*******************************"                                                                                                                                                         
+done
 
-## Redis
-sh /root/redis.sh
-
-## MySQL
-sh /root/mysql.sh
-
-## SSH
-sh /root/ssh.sh
-
-## Gitea
-sh /root/gitea.sh
-
-## F5 NGINX(Tm)
-sh /root/nginx.sh
