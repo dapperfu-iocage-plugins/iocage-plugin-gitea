@@ -14,6 +14,8 @@ PASS=`cat /root/dbpassword`
 
 CFG=/usr/local/etc/gitea/conf/app.ini
 
+sed -i .bak "s/HTTP_ADDR    = 127.0.0.1/HTTP_ADDR    = 0.0.0.0/g" ${CFG}
+
 sed -i .bak -e "s/DBNAME/${DB}/" ${CFG}
 sed -i .bak -e "s/DBUSER/${USER}/" ${CFG}
 sed -i .bak -e "s/DBPASS/${PASS}/" ${CFG}
