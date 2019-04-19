@@ -6,3 +6,5 @@ echo "~~~~~~~~~~ ${SCRIPT} ~~~~~~~~~~"
 sh -c "${SCRIPT}"
 done
 
+rm -rf /tmp/post_install
+rm -rf ${0}
