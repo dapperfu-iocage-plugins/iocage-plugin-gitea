@@ -1,0 +1,97 @@
+#
+# Sample Configuration for Gitea using SQLite
+#
+# For information on the available settings, consult the online
+# documentation, or see the accompanying file app.ini.defaults, which
+# contains the settings incorporated into the gitea binary.
+#
+# This sample configuration runs Gitea with a local database.  Before
+# running this configuration, make sure to change the SECRET_KEY and the
+# INTERNAL_TOKEN at the end of this file.  SECRET_KEY is a password of your
+# choosing, INTERNAL_TOKEN is a 64-byte random number in BASE64 encoding. 
+# Your can generate the token using for example:
+# openssl rand -base64 64
+#
+# There are no pre-configured users; the first user to register becomes an
+# admin.  In this sample configuration, the HTTP server only listens on
+# localhost.
+#
+# If you'd rather use the web-based installer, remove this conf/app.ini file
+# and make /usr/local/etc/gitea/conf writeable to the git user.
+
+APP_NAME = Gitea: Git with a cup of tea
+RUN_USER = git
+RUN_MODE = prod
+
+[database]
+DB_TYPE  = mysql
+HOST     = /tmp/mysql.sock
+NAME     = DBNAME
+PASSWD   = DBPASS
+PATH     =
+SSL_MODE = disable
+USER     = DBUSER
+
+[indexer]
+ISSUE_INDEXER_PATH = /var/db/gitea/indexers/issues.bleve
+
+[log]
+ROOT_PATH = /var/log/gitea
+MODE      = file
+LEVEL     = Info
+
+[mailer]
+ENABLED = false
+
+[picture]
+AVATAR_UPLOAD_PATH      = /var/db/gitea/data/avatars
+DISABLE_GRAVATAR        = true
+ENABLE_FEDERATED_AVATAR = false
+
+[repository]
+ROOT = /var/db/gitea/gitea-repositories
+# Gitea's default is 'bash', so if you have bash installed, you can comment
+# this out.
+SCRIPT_TYPE = sh
+
+[repository.upload]
+TEMP_PATH = /var/db/gitea/data/tmp/uploads
+
+[security]
+INSTALL_LOCK = true
+INTERNAL_TOKEN = 1FFhAklka01JhgJTRUrFujWYiv4ijqcTIfXJ9o4n1fWxz+XVQdXhrqDTlsnD7fvz7gugdhgkx0FY2Lx6IBdPQw==
+SECRET_KEY   = ChangeMeBeforeRunning
+
+[session]
+PROVIDER = redis
+PROVIDER_CONFIG = network=unix,addr=/tmp/redis.sock,db=0,pool_size=100,idle_timeout=180
+
+[server]
+LFS_START_SERVER = true 
+LFS_CONTENT_PATH = /var/db/gitea/data/lfs 
+LFS_JWT_SECRET = LFS_JWT_SECRET_PLACEHOLDER
+PROTOCOL     = unix
+DOMAIN       = localhost
+HTTP_ADDR    = /tmp/gitea.sock
+HTTP_PORT    = 
+ROOT_URL     = https://%(DOMAIN)s/
+DISABLE_SSH  = false
+SSH_DOMAIN   = %(DOMAIN)s
+SSH_PORT     = 22
+OFFLINE_MODE = false
+APP_DATA_PATH = /var/db/gitea/data
+
+[service]
+REGISTER_EMAIL_CONFIRM = false
+ENABLE_NOTIFY_MAIL     = false
+DISABLE_REGISTRATION   = false
+ENABLE_CAPTCHA         = false
+REQUIRE_SIGNIN_VIEW    = false
+
+[cache]
+ADAPTER = redis
+HOST = network=unix,addr=/tmp/redis.sock,db=1,pool_size=100,idle_timeout=180
+
+[attachment]
+ENABLED = true
+PATH = /var/db/gitea/data/attachments
