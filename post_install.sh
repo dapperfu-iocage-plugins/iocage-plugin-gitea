@@ -1,10 +1,9 @@
 #!/bin/sh
 
-for SCRIPT in  `ls /tmp/post_install/*.sh`
-do 
-echo "~~~~~~~~~~ ${SCRIPT} ~~~~~~~~~~"
-sh -c "${SCRIPT}"
-done
+# To disable any post_install scripts, change suffix from .sh
 
-#rm -rf /tmp/post_install
-#rm -rf ${0}
+for SCRIPT in  `ls /post_install/*.sh`
+do                                     # for SCRIPT {
+echo "~~~~~~~~~~ ${SCRIPT} ~~~~~~~~~~" # Echo Das Script
+sh -c "${SCRIPT}"                      # Run das script.
+done                                   # }
