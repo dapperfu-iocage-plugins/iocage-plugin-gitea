@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # To disable any post_install scripts, change suffix from .sh
 
 for SCRIPT in  `ls /post_install/*.sh`
