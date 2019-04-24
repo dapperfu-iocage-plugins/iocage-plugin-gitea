@@ -1,20 +1,14 @@
 {
-   "official" : false,
+   "release" : "11.2-RELEASE",
    "properties" : {
-      "dhcp" : "on",
       "allow_raw_sockets" : "1",
-      "vnet" : "on",
       "boot" : "on",
-      "bpf" : "yes"
+      "dhcp" : "on",
+      "bpf" : "yes",
+      "vnet" : "on"
    },
    "artifact" : "https://github.com/jed-frey-freenas-plugins/iocage-plugin-gitea.git",
-   "pkgs" : [
-      "www/nginx",
-      "databases/mysql57-server",
-      "www/gitea",
-      "databases/redis",
-      "openmdns"
-   ],
+   "official" : false,
    "fingerprints" : {
       "iocage-plugins" : [
          {
@@ -23,8 +17,14 @@
          }
       ]
    },
-   "packagesite" : "http://pkg.freebsd.org/FreeBSD:11:amd64/latest",
-   "plugin_schema" : "2",
    "name" : "gitea",
-   "release" : "11.2-RELEASE"
+   "packagesite" : "http://pkg.freebsd.org/FreeBSD:11:amd64/latest",
+   "pkgs" : [
+      "www/nginx",
+      "databases/mysql57-server",
+      "www/gitea",
+      "databases/redis",
+      "openmdns"
+   ],
+   "plugin_schema" : "2"
 }
