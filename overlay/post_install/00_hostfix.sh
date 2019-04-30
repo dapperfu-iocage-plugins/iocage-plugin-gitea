@@ -1,5 +1,5 @@
 #/bin/sh
-OLDHOST=`sysrc hostname | cut -f2 -d" "`
+OLDHOST=`sysrc -n hostname`
 HOST=`echo ${OLDHOST} | sed "s/_//"`
 sysrc hostname=${HOST}
 

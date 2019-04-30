@@ -1,0 +1,2 @@
+mysql_enable="YES"
+mysql_args="--skip-networking"

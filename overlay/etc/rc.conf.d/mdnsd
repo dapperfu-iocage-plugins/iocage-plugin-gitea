@@ -1,0 +1,2 @@
+mdnsd_enable="yes"
+mdnsd_flags="epair0b"
