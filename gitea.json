@@ -1,25 +1,13 @@
 {
-   "release" : "11.2-RELEASE",
    "properties" : {
-      "allow_raw_sockets" : "1",
-      "boot" : "on",
-      "dhcp" : "on",
       "bpf" : "yes",
+      "allow_mount_tmpfs" : "1",
+      "dhcp" : "on",
       "vnet" : "on",
-      "allow_mount_tmpfs" : "1"
+      "boot" : "on",
+      "allow_raw_sockets" : "1"
    },
-   "artifact" : "https://github.com/jed-frey-freenas-plugins/iocage-plugin-gitea.git",
-   "official" : false,
-   "fingerprints" : {
-      "iocage-plugins" : [
-         {
-            "fingerprint" : "b0170035af3acc5f3f3ae1859dc717101b4e6c1d0a794ad554928ca0cbb2f438",
-            "function" : "sha256"
-         }
-      ]
-   },
-   "name" : "gitea",
-   "packagesite" : "http://pkg.FreeBSD.org/${ABI}/quarterly",
+   "plugin_schema" : "2",
    "pkgs" : [
       "nginx",
       "mysql57-server",
@@ -27,5 +15,17 @@
       "redis",
       "openmdns"
    ],
-   "plugin_schema" : "2"
+   "name" : "gitea",
+   "official" : false,
+   "artifact" : "https://github.com/jed-frey-freenas-plugins/iocage-plugin-gitea.git",
+   "packagesite" : "http://pkg.FreeBSD.org/${ABI}/quarterly",
+   "release" : "11.2-RELEASE",
+   "fingerprints" : {
+      "plugin-default" : [
+         {
+            "function" : "sha256",
+            "fingerprint" : "b0170035af3acc5f3f3ae1859dc717101b4e6c1d0a794ad554928ca0cbb2f438"
+         }
+      ]
+   }
 }
