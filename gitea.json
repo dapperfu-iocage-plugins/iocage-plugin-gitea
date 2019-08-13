@@ -19,7 +19,7 @@
    "official" : false,
    "artifact" : "https://github.com/jed-frey-freenas-plugins/iocage-plugin-gitea.git",
    "packagesite" : "http://pkg.FreeBSD.org/${ABI}/quarterly",
-   "release" : "11.2-RELEASE",
+   "release" : "12.0-RELEASE",
    "fingerprints" : {
       "plugin-default" : [
          {
