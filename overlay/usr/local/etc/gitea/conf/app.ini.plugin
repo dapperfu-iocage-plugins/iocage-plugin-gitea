@@ -1,0 +1,80 @@
+# Gitea configuration template for iocage jail
+
+APP_NAME = Gitea
+RUN_USER = git
+RUN_MODE = prod
+
+[database]
+DB_TYPE  = mysql
+HOST     = /tmp/mysql.sock
+NAME     = gitea
+PASSWD   = __PASSWD__
+SSL_MODE = disable
+USER     = gitea
+
+[indexer]
+ISSUE_INDEXER_PATH = /var/db/gitea/indexers/issues.bleve
+
+[log]
+ROOT_PATH = /var/log/gitea
+MODE      = file
+LEVEL     = Debug
+
+[mailer]
+ENABLED = false
+
+[oauth2]
+JWT_SECRET = __JWT_SECRET__
+
+[picture]
+AVATAR_UPLOAD_PATH      = /var/db/gitea/data/avatars
+DISABLE_GRAVATAR        = true
+ENABLE_FEDERATED_AVATAR = false
+
+[repository]
+ROOT = /var/db/gitea/gitea-repositories
+# Gitea's default is 'bash', so if you have bash installed, you can comment
+# this out.
+SCRIPT_TYPE = sh
+
+[repository.upload]
+TEMP_PATH = /var/db/gitea/data/tmp/uploads
+
+[security]
+INSTALL_LOCK = true
+INTERNAL_TOKEN = 1FFhAklka01JhgJTRUrFujWYiv4ijqcTIfXJ9o4n1fWxz+XVQdXhrqDTlsnD7fvz7gugdhgkx0FY2Lx6IBdPQw==
+SECRET_KEY   = __SECRET_KEY__
+
+[session]
+PROVIDER = file
+PROVIDER_CONFIG = /var/db/gitea/data/sessions
+
+[server]
+DOMAIN       = __HOST__
+;LFS_START_SERVER = true
+;LFS_CONTENT_PATH = /var/db/gitea/data/lfs
+;LFS_JWT_SECRET = __LFS_JWT_SECRET__
+PROTOCOL = unix
+HTTP_ADDR    = /tmp/gitea.sock
+HTTP_PORT    = 
+ROOT_URL     = https://gitea-1/
+DISABLE_SSH  = false
+SSH_DOMAIN   = %(DOMAIN)s
+SSH_PORT     = 22
+OFFLINE_MODE = true
+APP_DATA_PATH = /var/db/gitea/data
+
+[service]
+REGISTER_EMAIL_CONFIRM = false
+ENABLE_NOTIFY_MAIL     = false
+DISABLE_REGISTRATION   = false
+ENABLE_CAPTCHA         = false
+REQUIRE_SIGNIN_VIEW    = false
+
+[cache]
+ADAPTER = redis
+HOST = network=unix,addr=/tmp/redis.sock,db=1,pool_size=100,idle_timeout=180
+
+[attachment]
+ENABLED = true
+PATH = /var/db/gitea/data/attachments
