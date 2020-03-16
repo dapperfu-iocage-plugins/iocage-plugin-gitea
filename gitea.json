@@ -1,5 +1,5 @@
 {
-    "artifact": "https://github.com/jed-frey-freenas-plugins/iocage-plugin-gitea.git",
+    "artifact": "https://github.com/dapperfu-freenas-plugins/iocage-plugin-gitea.git",
     "fingerprints": {
         "plugin-default": [
             {
@@ -27,5 +27,5 @@
         "dhcp": "on",
         "vnet": "on"
     },
-    "release": "12.0-RELEASE"
+    "release": "12.1-RELEASE"
 }
