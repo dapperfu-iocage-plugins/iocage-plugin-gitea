@@ -1,5 +1,5 @@
 {
-    "artifact": "https://github.com/dapperfu-freenas-plugins/iocage-plugin-gitea.git",
+    "artifact": "https://github.com/dapperfu-iocage-plugins/iocage-plugin-gitea.git",
     "fingerprints": {
         "plugin-default": [
             {
